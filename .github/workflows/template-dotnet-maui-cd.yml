@@ -54,7 +54,7 @@ jobs:
       - name: Build Maui WinUI project
         shell: pwsh
         run: |
-          msbuild "${{ inputs.csproj }}" -r -p:Configuration=Release -p:RestorePackages=false -p:TargetFramework=net6.0-windows10.0.19041.0
+          dotnet publish ${{ inputs.csproj }} -c Release -f net6.0-windows10.0.19041.0
 
       #POST-BUILD
       - name: Publish build artifacts
